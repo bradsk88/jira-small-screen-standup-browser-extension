@@ -1,0 +1,28 @@
+{
+  "name": "Jira Small-Screen Stand-Up Extension",
+  "version": "1.0.0",
+  "description": "A chrome extension which restructures the UI of Jira for better viewing on a small screen like a laptop",
+  "permissions": [
+    "contextMenus"
+  ],
+  "background": {
+    "scripts": [
+      "browser-polyfill.js",
+      "./dist/background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.atlassian.net/jira/software/c/projects/*/boards/*"
+      ],
+      "js": [
+        "./dist/content.js"
+      ]
+    }
+  ],
+  "icons": {
+    "128": "logo-128.png"
+  },
+  "manifest_version": 3
+}
